@@ -1,0 +1,120 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    }
+    
+    
+    /* Estilos para a seção de destaque (hero section) */
+    .hero {
+    background-image: url("https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    }
+    
+    .hero-content {
+    padding: 10%;
+    }
+    
+    
+    .hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
+    }
+    
+    .hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #fff;
+    }
+    
+    .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    }
+    
+    .btn:hover {
+    background-color: #0056b3;
+    }
+    
+    
+    h1, h2, h3 {
+    color: #333;
+    }
+    
+    a {
+    color: #007bff;
+    text-decoration: none;
+    }
+    
+    ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    }
+    
+    /* Estilos para o cabeçalho */
+    header {
+    background-color: #f8f8f8;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    
+    header h1 {
+    margin: 0;
+    }
+    
+    nav ul {
+    display: flex;
+    justify-content: flex-end;
+    }
+    
+    nav ul li {
+    margin-left: 10px;
+    }
+    
+    
+    /* Estilos para os destaques */
+    section {
+    padding: 20px;
+    }
+    
+    section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    }
+    
+    article {
+    margin-bottom: 20px;
+    }
+    
+    /* Estilos para as categorias de notícias */
+    section ul {
+    display: flex;
+    }
+    
+    section ul li {
+    margin-right: 10px;
+    }
+    
+    /* Estilos para o rodapé */
+    footer {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    }
+    
+    

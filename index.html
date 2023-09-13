@@ -1,0 +1,115 @@
+<html lang="pt-br"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bolinha.com - Notícias sobre jogadores e equipes amadoras</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Bolinha.com</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Notícias</a></li>
+        <li><a href="#">Jogadores</a></li>
+        <li><a href="#">Equipes</a></li>
+        <li><a href="#">Resultados</a></li>
+        <li><a href="#">Análises</a></li>
+        <li><a href="#">Eventos</a></li>
+        <li><a href="#">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1 id="titulo-header">Bem-vindo ao Bolinha.com</h1>
+      <p id="descricao">O seu destino para notícias e informações sobre o mundo do futebol amador.</p>
+      <a href="#" class="btn"><span id="btn-text"></span></a>
+    </div>
+  </section>
+  
+  <section>
+    <h2>Destaques</h2>
+    <article>
+      <h3>Equipe local conquista o campeonato amador da região</h3>
+      <p>Leia sobre a emocionante jornada da equipe "Amigos da Bola" que venceu o torneio amador local contra todas as expectativas.</p>
+      <a href="#">Leia mais</a>
+    </article>
+    <article>
+      <h3>Entrevista exclusiva com Pedro Silva</h3>
+      <p>Conheça a história inspiradora de Pedro Silva, um talentoso jogador amador que está chamando a atenção pela sua habilidade e dedicação ao esporte.</p>
+      <a href="#">Leia mais</a>
+    </article>
+  </section>
+
+  <section>
+    <h2>Últimas Notícias</h2>
+    <article>
+      <h3>Torneio Regional de Futebol Amador tem início</h3>
+      <p>Saiba tudo sobre o torneio de futebol amador que reúne equipes de toda a região. Fique por dentro dos jogos, resultados e destaques do campeonato.</p>
+      <a href="#">Leia mais</a>
+    </article>
+    <article>
+      <h3>Destaque: Ana Torres é eleita a melhor jogadora amadora do ano</h3>
+      <p>Descubra como Ana Torres se destacou no cenário amador e conquistou o título de melhor jogadora do ano. Conheça suas habilidades e sua trajetória no esporte.</p>
+      <a href="#">Leia mais</a>
+    </article>
+  </section>
+
+  <section>
+    <h2>Categorias de Notícias</h2>
+    <ul>
+      <li><a href="#">Competições Locais</a></li>
+      <li><a href="#">Desempenho dos Jogadores</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Bolinha.com © 2023 - Todos os direitos reservados</p>
+  </footer>
+
+<script>
+
+
+const tituloHeader = document.getElementById('titulo-header');
+const descricao = document.getElementById('descricao');
+const btnDesc = document.getElementById('btn-text');
+
+const graphqlEndpoint = 'https://us-west-2.cdn.hygraph.com/content/clmhualov0j0o01uk56dy3orm/master'; // Replace with your GraphQL endpoint
+
+const query = `
+  query HeroSections {
+    heroSections {
+      title
+      description
+      infoBtn
+    }
+  }
+`;
+
+fetch(graphqlEndpoint, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    // You may need to include authorization headers if required
+  },
+  body: JSON.stringify({ query }),
+})
+  .then(response => response.json())
+  .then(data => {
+    // Handle the data returned by the GraphQL server
+    const result = data.data.heroSections[0]; // Assuming you want the first hero section
+    tituloHeader.textContent = result.title;
+    descricao.textContent = result.description;
+    btnDesc.textContent = result.infoBtn;
+    
+    console.log(result);
+ 
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+  
+</script>
+</body></html>
